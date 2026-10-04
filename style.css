@@ -1,0 +1,437 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fff;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* CABEÇALHO */
+
+header {
+    background-color: #a90000;
+    color: white;
+    padding: 20px 8%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffdede;
+}
+
+/* SEÇÃO PRINCIPAL */
+
+.hero {
+    min-height: 600px;
+    background: linear-gradient(135deg, #8f0000, #d40000);
+    color: white;
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.destaque {
+    color: #c40000;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.hero .destaque {
+    color: #ffdede;
+}
+
+.hero h2 {
+    font-size: 55px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero p:not(.destaque) {
+    font-size: 19px;
+    margin-bottom: 30px;
+}
+
+/* BOTÕES */
+
+.botao {
+    display: inline-block;
+    background-color: white;
+    color: #a00000;
+    padding: 13px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.botao:hover {
+    background-color: #ffdede;
+    transform: translateY(-2px);
+}
+
+
+
+
+/* TABULEIRO */
+
+.tabuleiro {
+    width: 400px;
+    height: 400px;
+
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+
+    border: 8px solid white;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+
+    flex-shrink: 0;
+}
+
+/* TODAS AS CASAS */
+
+.tabuleiro div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 34px;
+
+    background-color: #ffffff;
+    color: #111111;
+}
+
+/* CASAS AZUIS */
+
+.tabuleiro div:nth-child(2),
+.tabuleiro div:nth-child(4),
+.tabuleiro div:nth-child(6),
+.tabuleiro div:nth-child(8),
+
+.tabuleiro div:nth-child(9),
+.tabuleiro div:nth-child(11),
+.tabuleiro div:nth-child(13),
+.tabuleiro div:nth-child(15),
+
+.tabuleiro div:nth-child(18),
+.tabuleiro div:nth-child(20),
+.tabuleiro div:nth-child(22),
+.tabuleiro div:nth-child(24),
+
+.tabuleiro div:nth-child(25),
+.tabuleiro div:nth-child(27),
+.tabuleiro div:nth-child(29),
+.tabuleiro div:nth-child(31),
+
+.tabuleiro div:nth-child(34),
+.tabuleiro div:nth-child(36),
+.tabuleiro div:nth-child(38),
+.tabuleiro div:nth-child(40),
+
+.tabuleiro div:nth-child(41),
+.tabuleiro div:nth-child(43),
+.tabuleiro div:nth-child(45),
+.tabuleiro div:nth-child(47),
+
+.tabuleiro div:nth-child(50),
+.tabuleiro div:nth-child(52),
+.tabuleiro div:nth-child(54),
+.tabuleiro div:nth-child(56),
+
+.tabuleiro div:nth-child(57),
+.tabuleiro div:nth-child(59),
+.tabuleiro div:nth-child(61),
+.tabuleiro div:nth-child(63) {
+    background-color: #2563a6;
+}
+
+
+/* PEÇAS PRETAS */
+
+.tabuleiro div:nth-child(1),
+.tabuleiro div:nth-child(2),
+.tabuleiro div:nth-child(3),
+.tabuleiro div:nth-child(4),
+.tabuleiro div:nth-child(5),
+.tabuleiro div:nth-child(6),
+.tabuleiro div:nth-child(7),
+.tabuleiro div:nth-child(8),
+
+.tabuleiro div:nth-child(9),
+.tabuleiro div:nth-child(10),
+.tabuleiro div:nth-child(11),
+.tabuleiro div:nth-child(12),
+.tabuleiro div:nth-child(13),
+.tabuleiro div:nth-child(14),
+.tabuleiro div:nth-child(15),
+.tabuleiro div:nth-child(16) {
+    color: #111111;
+}
+
+
+.tabuleiro div:nth-child(56),
+.tabuleiro div:nth-child(57), 
+.tabuleiro div:nth-child(58), 
+.tabuleiro div:nth-child(59), 
+.tabuleiro div:nth-child(60), 
+.tabuleiro div:nth-child(61), 
+.tabuleiro div:nth-child(62), 
+.tabuleiro div:nth-child(63), 
+.tabuleiro div:nth-child(64) { color: white; 
+/* Contorno para a peça aparecer na casa branca */ text-shadow: -2px -2px 0 #222, 2px -2px 0 #222, -2px 2px 0 #222, 2px 2px 0 #222; }
+
+
+/* CONTEÚDO */
+
+.conteudo {
+    padding: 90px 8%;
+    text-align: center;
+}
+
+.conteudo h2,
+.botvinnik h2,
+.final h2 {
+    font-size: 40px;
+    color: #8f0000;
+    margin-bottom: 20px;
+}
+
+.conteudo > p:not(.destaque) {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* CARDS */
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.cards article {
+    width: 30%;
+    padding: 35px 25px;
+    border-top: 5px solid #b00000;
+    background-color: #fff5f5;
+    border-radius: 5px;
+}
+
+.cards article span {
+    font-size: 45px;
+    color: #b00000;
+}
+
+.cards h3 {
+    color: #900000;
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+/* BOTVINNIK */
+
+.botvinnik {
+    background-color: #f7eaea;
+    padding: 90px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 70px;
+}
+
+.botvinnik > div:first-child {
+    max-width: 700px;
+}
+
+.botvinnik p {
+    margin-bottom: 20px;
+}
+
+.botvinnik blockquote {
+    border-left: 5px solid #a00000;
+    padding: 15px 20px;
+    margin-top: 25px;
+    font-style: italic;
+    font-weight: bold;
+    color: #700000;
+}
+
+.numero {
+    width: 250px;
+    height: 250px;
+    background-color: #a00000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.numero strong {
+    font-size: 90px;
+}
+
+.numero span {
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+/* FINAL */
+
+.final {
+    text-align: center;
+    padding: 90px 8%;
+    background-color: #a00000;
+    color: white;
+}
+
+.final h2 {
+    color: white;
+}
+
+.final p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+/* RODAPÉ */
+
+footer {
+    background-color: #570000;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    font-size: 14px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 900px) {
+
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero h2 {
+        font-size: 42px;
+    }
+
+    .tabuleiro {
+        width: 320px;
+        height: 320px;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cards article {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .botvinnik {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .botvinnik blockquote {
+        text-align: left;
+    }
+}
+/* IMAGEM DE BOTVINNIK */
+
+.botvinnik {
+    background-color: #f7eaea;
+    padding: 90px 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.botvinnik-imagem {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.botvinnik-imagem img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border: 8px solid #2563a6;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.botvinnik-texto {
+    max-width: 650px;
+}
+
+.botvinnik-texto h2 {
+    color: #8f0000;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.botvinnik-texto p {
+    margin-bottom: 20px;
+}
+
+.botvinnik blockquote {
+    border-left: 5px solid #2563a6;
+    padding: 15px 20px;
+    margin-top: 25px;
+    font-style: italic;
+    font-weight: bold;
+    color: #700000;
+}
